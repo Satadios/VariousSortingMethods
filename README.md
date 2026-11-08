@@ -10,7 +10,7 @@ This project was completed as a laboratory work for the course "Software Enginee
 
 
 ## Types of sorting that will be discussed:
-  -- simplest sort
+  * simplest sort
   * Exchange sort
   * Sorting by inserts
   * Sorting by selection
