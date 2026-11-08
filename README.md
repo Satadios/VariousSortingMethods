@@ -1,5 +1,5 @@
 # Various Sorting Methods 
-# by Satadios
+### by Satadios
 
 This repository is intended for studying various types of sorting, their complexity and execution time. 
 
