@@ -15,3 +15,14 @@ This project was completed as a laboratory work for the course "Software Enginee
   * Sorting by inserts
   * Sorting by selection
   * Merge sort
+
+## Test Environment
+
+All measurements were performed on the following machine:
+
+| Component | Specification |
+|-----------|---------------|
+| CPU       | Intel(R) Core(TM) 5 210H (8+4) @ 4.80 GHz | |
+| RAM       | 15 GB DDR4 |
+| OS        | Arch Linux x86_64 |
+| Language  | C++17 |
