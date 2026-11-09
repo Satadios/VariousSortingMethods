@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 void merge(int Mass[], int Aux[], int a, int c, int b)
 {
@@ -49,12 +50,21 @@ int main()
         scanf("%d", &massive[symbol]);
     }
 
+    struct timespec start, end;
+    clock_gettime(CLOCK_MONOTONIC, &start);   // старт таймера
+
     mergeSort(massive, aux, 0, count - 1);
+
+    clock_gettime(CLOCK_MONOTONIC, &end);     // конец таймера
 
     for(int symbol = 0; symbol < n; symbol++){
         printf("%d ", massive[symbol]);
     }
     printf("\n");
+
+    double seconds = (end.tv_sec - start.tv_sec)
+                   + (end.tv_nsec - start.tv_nsec) / 1e9;
+    fprintf(stderr, "Время сортировки: %.6f сек\n", seconds);
 
     return 0;
 }
