@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 int main()
 {
@@ -10,6 +11,8 @@ int main()
             scanf("%d", &massive[i]);
         }
 
+        clock_t start = clock();
+
         for (int forward = 1;forward < size_massive;forward++) {
             for(int back = forward;back > 0;back--){
                 if (massive[back] < massive[back - 1]) {
@@ -20,10 +23,15 @@ int main()
             }
         }
 
+        clock_t end = clock();
+
         for (int i = 0; i < size_massive; i++) {
             printf("%d ", massive[i]);
         }
         printf("\n");
+
+        double seconds = (double)(end - start) / CLOCKS_PER_SEC;
+        fprintf(stderr, "Время сортировки: %f сек\n", seconds);
     }
 
     return 0;
