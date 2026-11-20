@@ -4,6 +4,8 @@
 
 #ifndef FULLLAB03_FUNC_SORTING_H
 #define FULLLAB03_FUNC_SORTING_H
+#include <stdlib.h>
+#include <string.h>
 
 #endif
 #include <stdio.h>
@@ -59,5 +61,30 @@ void fourth_sort(int *massive, size_t index_array, size_t count) {
     }
 }
 
+void merge_sort(int *a, int *b, int l,int r) {
+    if (l < r) {
+        int c = (l + r) / 2;
+        merge_sort(b, a,l,c);
+        merge_sort(b,a,c+1,r);
+        int i = l;
+        int j = c + 1;
+        int k = l;
+        while (i <= c && j <= r) {
+            if (b[i] < b[j]) {
+                a[k++] = b[i++];
+            } else {
+                a[k++] = b[j++];
+            }
+        }
+        while (i <= c) { a[k++] = b[i++]; }
+        while (j <= r) { a[k++] = b[j++]; }
 
+    }
+}
 
+void MergeSort(int *a, int n) {
+    int *b = (int *)malloc(n * sizeof(int));
+    memcpy(b, a,n * sizeof(int));
+    merge_sort(a , b,0,n - 1);
+    free(b);
+}
